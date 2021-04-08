@@ -1,1 +1,1 @@
-## Meipaly NextJS
+## AaronCivi | The Spiritual Sales Guy
