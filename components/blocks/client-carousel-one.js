@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper";
 
 import "swiper/swiper-bundle.min.css";
+import { urlFor } from "@/utils/sanity";
 
 SwiperCore.use([Pagination]);
 
@@ -64,7 +65,7 @@ const ClientCarouselOne = ({ data = ClientCarouselData }) => {
                   <div className="singleClient">
                     <Link href={url}>
                       <a>
-                        <img src={image} alt="" />
+                        <img src={urlFor(image)} alt="" />
                       </a>
                     </Link>
                   </div>

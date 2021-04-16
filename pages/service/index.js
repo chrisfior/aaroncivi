@@ -18,7 +18,7 @@ const ServicePage = ({ posts }) => {
       <SearchContextProvider>
         <Layout PageTitle="Services">
           <PageBanner title="Services" name="Services" />
-          <ServiceOne items={posts} />
+          <ServiceOne data={{ posts }} />
           <ServiceTwo data={{ posts }} />
           <ServiceThree data={{ posts }} />
         </Layout>

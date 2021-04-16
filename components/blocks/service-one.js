@@ -2,12 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ServiceCardOne from "@/components/service-card-one";
 
-const ServiceOne = ({ items }) => {
+const ServiceOne = ({ data }) => {
+  const { posts } = data;
   return (
     <section className="service_section_2 commonSection">
       <Container>
         <Row>
-          {items.map((post, index) => (
+          {posts.map((post, index) => (
             <Col lg={4} md={12} key={index}>
               <ServiceCardOne data={post} />
             </Col>
