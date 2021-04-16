@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
+import { urlFor } from "@/utils/sanity";
 
 const BlogCard = ({ data }) => {
-  const { image, title, url, date } = data;
+  const { image, title, url: slug, date } = data;
+  const url = `/blog/${slug.current}`;
   return (
     <div className="latestBlogItem">
       <div className="lbi_thumb">
-        <img src={image} alt={title} />
+        <img src={urlFor(image)} alt={title} />
       </div>
       <div className="lbi_details">
         <Link href={url}>

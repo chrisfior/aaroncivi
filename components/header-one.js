@@ -5,7 +5,7 @@ import { SearchContext } from "@/context/search-context";
 import { MenuContext } from "@/context/menu-context";
 import Link from "next/link";
 
-const HeaderOne = () => {
+const HeaderOne = ({ navs = NavLinks, logo = "light"}) => {
   const [sticky, setSticky] = useState(false);
   const { searchStatus, updateSearchStatus } = useContext(SearchContext);
   const { menuStatus, updateMenuStatus } = useContext(MenuContext);
@@ -46,7 +46,7 @@ const HeaderOne = () => {
             <div className="logo">
               <Link href="/">
                 <a>
-                  <img src={LogoImage.light} alt="" />
+                  <img src={LogoImage[logo]} alt="" />
                 </a>
               </Link>
             </div>
@@ -54,7 +54,7 @@ const HeaderOne = () => {
           <Col lg={8} sm={8} md={7} className="d-none d-lg-block ">
             <nav className="mainmenu text-center">
               <ul>
-                {NavLinks.map((links, index) => {
+                {navs.map((links, index) => {
                   return (
                     <li
                       key={index}

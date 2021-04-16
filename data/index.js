@@ -673,7 +673,7 @@ export const TeamOneData = {
     text:
       "We are committed to providing our customers with exceptional service \n while offering our employees the best training."
   },
-  posts: [
+  users: [
     {
       image: team01,
       name: "Herman Fisher",
@@ -981,7 +981,7 @@ export const FeatureTabData = {
 export const ParallaxOneData = {
   iconName: "mei-team",
   title: "Great things in business are never done by one person.",
-  specialText: "They’re done by a team of people.",
+  subtitle: "They’re done by a team of people.",
   text:
     "We are committed to providing our customers with exceptional service while \n offering our employees the best training."
 };

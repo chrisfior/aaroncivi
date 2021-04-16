@@ -1,8 +1,7 @@
 import React from "react";
 import { LogoImage } from "@/data";
 
-const Footer = () => {
-  const { light } = LogoImage;
+const Footer = ({ logo = "light" }) => {
   return (
     <footer className="footer_1">
       <div className="container">
@@ -10,7 +9,7 @@ const Footer = () => {
           <div className="col-lg-5 col-sm-6 col-md-5">
             <aside className="widget aboutwidget">
               <a href="/">
-                <img src={light} alt="" />
+                <img src={LogoImage[logo]} alt="" />
               </a>
               <p>
                 Welcome to our web design agency. Lorem ipsum is simply free
