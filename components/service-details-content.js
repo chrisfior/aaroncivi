@@ -1,11 +1,13 @@
 import React from "react";
 import serviceS1 from "@/images/s1.jpg";
 import serviceS2 from "@/images/s2.jpg";
-const ServiceDetailsContent = () => {
+import { urlFor } from "@/utils/sanity";
+const ServiceDetailsContent = ({ data }) => {
+  const { title, text, image } = data;
   return (
     <div className="serviceArea">
-      <img src={serviceS1} alt="" />
-      <h2>Graphic Designing</h2>
+      {image && <img src={urlFor(image)} alt="" />}
+      <h2>{title}</h2>
       <p>
         Need something changed or is there something not quite working the way
         you envisaged? Is your van a little old and tired and need refreshing?

@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
-import { BlogSidebarPost } from "@/data";
-const BlogSidebar = () => {
+import Link from "next/link";
+import { urlFor } from "@/utils/sanity";
+const BlogSidebar = ({ items }) => {
   return (
     <Fragment>
       <aside className="widget search-widget">
@@ -11,10 +12,12 @@ const BlogSidebar = () => {
       <aside className="widget recent_posts">
         <h3 className="widget_title">Latest Posts</h3>
         <div className="meipaly_post_widget">
-          {BlogSidebarPost.map(({ title, image, url }, index) => (
+          {items.map(({ title, image, url }, index) => (
             <div className="mpw_item" key={index}>
-              <img src={image} alt="" />
-              <a href={url}>{title}</a>
+              <img src={urlFor(image)} alt="" />
+              <Link href={url}>
+                <a>{title}</a>
+              </Link>
             </div>
           ))}
         </div>
