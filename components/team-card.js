@@ -1,11 +1,12 @@
 import React from "react";
+import { urlFor } from "@/utils/sanity";
 
 const TeamCard = ({ data }) => {
   const { image, name, designation, url, socials } = data;
   return (
     <div className="singleTM">
       <div className="tm_img">
-        <img src={image} alt={name} />
+        <img src={urlFor(image)} alt={name} />
         <div className="tm_overlay">
           <div className="team_social">
             {socials.map(({ name, url }, index) => (

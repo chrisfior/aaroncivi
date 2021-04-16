@@ -1,18 +1,19 @@
 import React, { Fragment } from "react";
 import AuthorCard from "@/components/author-card";
 import Comments from "@/components/comments";
-import blogDetailsImage from "@/images/blog/7.jpg";
+import { urlFor } from "@/utils/sanity";
 
-const SinglePostCard = () => {
+const SinglePostCard = ({ data }) => {
+  const { title, date, image } = data;
   return (
     <Fragment>
       <div className="single_blog">
         <div className="blog_thumb">
-          <img src={blogDetailsImage} alt="" />
+          <img src={urlFor(image)} alt="" />
         </div>
         <div className="blog_headings">
-          <span className="blog_date">20 nov</span>
-          <h2>Become the best sale marketer</h2>
+          <span className="blog_date">{date}</span>
+          <h2>{title}</h2>
           <p className="blog_metas">
             <a href="#">By layerdrops</a>-<a href="#">30 Likes</a>-
             <a href="#">2 Comments</a>
