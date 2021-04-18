@@ -170,7 +170,7 @@ export const SliderThreeData = [
 export const ContactInfosBlock = {
   subTitle: "our offices",
   title: "offices near you",
-  description:
+  text:
     "We are committed to providing our customers with exceptional service while \n offering our employees the best training."
 };
 
@@ -809,7 +809,7 @@ export const TestimonialsOneData = {
     subTitle: "our testimonials",
     title: "happy customers"
   },
-  posts: [
+  testimonialsPosts: [
     {
       name: "Cecilia Colon",
       designation: "Director",
@@ -896,7 +896,7 @@ export const FeatureTabData = {
     text:
       "We are committed to providing our customers with exceptional service while\n offering our employees the best training."
   },
-  posts: [
+  featureTabPosts: [
     {
       title: "Latest technology",
       content:

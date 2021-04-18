@@ -5,7 +5,7 @@ import { SearchContext } from "@/context/search-context";
 import { MenuContext } from "@/context/menu-context";
 import Link from "next/link";
 
-const HeaderOne = ({ navs = NavLinks, logo = "light"}) => {
+const HeaderOne = ({ navs = NavLinks, logo = "light" }) => {
   const [sticky, setSticky] = useState(false);
   const { searchStatus, updateSearchStatus } = useContext(SearchContext);
   const { menuStatus, updateMenuStatus } = useContext(MenuContext);
@@ -35,9 +35,10 @@ const HeaderOne = ({ navs = NavLinks, logo = "light"}) => {
 
   return (
     <header
-      className={`header_01 ${
-        true === sticky ? "fixedHeader animated flipInX" : null
-      }`}
+      className={`header_01
+        ${true === sticky ? "fixedHeader animated flipInX" : null}
+        ${logo === 'dark' ? "black_color" : null}`
+      }
       id="header"
     >
       <Container fluid>

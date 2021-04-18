@@ -16,7 +16,10 @@ const query = `*[_type == "page" && url.current == $url][0]{
     ...,
     posts[]->,
     blogs[]->,
-    portfolioPosts[]->,
+    portfolioPosts[]->{
+      ...,
+      categories[]->,
+    },
     users[]->,
   },
   "url": url.current

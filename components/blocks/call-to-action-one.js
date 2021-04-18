@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const CallToActionOne = ({ extraClassName, buttonClass }) => {
+const CallToActionOne = ({ data: {extraClassName, buttonClass }}) => {
   return (
     <section className={`commonSection ${extraClassName}`}>
       <div className="container">

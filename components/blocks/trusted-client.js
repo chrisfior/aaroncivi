@@ -3,10 +3,10 @@ import Link from "next/link";
 import { TrustClientData } from "@/data";
 import { urlFor } from "@/utils/sanity";
 
-const TrustedClient = ({ data = TrustClientData, extraClassName }) => {
+const TrustedClient = ({ data = TrustClientData }) => {
   const { image, title, text, url } = data;
   return (
-    <section className={`commonSection trustClient ${extraClassName}`}>
+    <section className={`commonSection trustClient pb_120`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

@@ -14,6 +14,16 @@ export default {
       type: "string",
     },
     {
+      name: "image",
+      title: "image",
+      type: "image",
+    },
+    {
+      name: "text",
+      title: "Text",
+      type: "text",
+    },
+    {
       name: "url",
       title: "url",
       type: "slug",

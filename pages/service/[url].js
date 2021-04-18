@@ -4,7 +4,7 @@ import { getClient } from "@/utils/sanity";
 import { useRouter } from "next/router";
 import Error from "next/error";
 import ServiceDetails from "@/components/service-details";
-import CallToActionOne from "@/components/call-to-action-one";
+import CallToActionOne from "@/components/blocks/call-to-action-one";
 
 const query = `*[_type == "post" && url.current == $url][0]{
   ...,

@@ -7,7 +7,7 @@ import "swiper/swiper-bundle.min.css";
 
 SwiperCore.use([Autoplay, Thumbs, Pagination]);
 
-const TestimonialsOneCarousel = () => {
+const TestimonialsOneCarousel = ({ data = TestimonialsOneData }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const testimonialsThumbOptions = {
@@ -32,7 +32,7 @@ const TestimonialsOneCarousel = () => {
       delay: 5000
     }
   };
-  const { sectionContent, posts } = TestimonialsOneData;
+  const { sectionContent, testimonialsPosts } = data;
   return (
     <section className="commonSection testimonial_2">
       <Container>
@@ -45,7 +45,7 @@ const TestimonialsOneCarousel = () => {
               onSwiper={setThumbsSwiper}
               {...testimonialsThumbOptions}
             >
-              {posts.map(({ name, designation, image }, index) => (
+              {testimonialsPosts.map(({ name, designation, image }, index) => (
                 <SwiperSlide key={index}>
                   <div className="control_item">
                     <a href={`#tab_${index}`} data-toggle="tab">
@@ -72,7 +72,7 @@ const TestimonialsOneCarousel = () => {
                 thumbs={{ swiper: thumbsSwiper }}
                 {...testimonialsOptions}
               >
-                {posts.map(({ content, date }, index) => (
+                {testimonialsPosts.map(({ content, date }, index) => (
                   <SwiperSlide key={index}>
                     <div className="testi_con">
                       <p>{content}</p>

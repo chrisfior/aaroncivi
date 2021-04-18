@@ -1,6 +1,7 @@
 import React from "react";
 import { FeatureTwoData } from "@/data";
-import SectionTitle from "./section-title";
+import SectionTitle from "../section-title";
+import { urlFor } from "@/utils/sanity";
 
 const FeatureTwo = () => {
   const { sectionContent, posts, image } = FeatureTwoData;
@@ -34,7 +35,7 @@ const FeatureTwo = () => {
           </div>
           <div className="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
             <div className="features_img">
-              <img src={image.path} alt="" />
+              <img src={urlFor(image.path)} alt="" />
               <div className="img_details">
                 <h4>{image.text}</h4>
               </div>

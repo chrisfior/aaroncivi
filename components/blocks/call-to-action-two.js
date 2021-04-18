@@ -3,12 +3,12 @@ import { CallToActionTwoData } from "@/data";
 import { Col, Container, Row } from "react-bootstrap";
 import Link from "next/link";
 
-const CallToActionTwo = () => {
+const CallToActionTwo = ({ data: { items = CallToActionTwoData } = {} }) => {
   return (
     <section className="noPadding">
       <Container fluid>
         <Row>
-          {CallToActionTwoData.map(({ label, url }, index) => {
+          {items.map(({ label, url }, index) => {
             return (
               <Col lg={6} md={6} className="noPadding" key={index}>
                 <div
