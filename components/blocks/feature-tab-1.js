@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SectionTitle from "@/components/section-title";
 import { FeatureTabData } from "@/data";
+import { urlFor } from "@/utils/sanity";
 
-const FeatureTabOne = () => {
+const FeatureTabOne = ({ data = FeatureTabData }) => {
   const [active, setActive] = useState(1);
-  const { sectionContent, posts } = FeatureTabData;
+  const { sectionContent, featureTabPosts: posts } = data;
   return (
     <section className="commonSection chooseUs">
       <Container>
@@ -64,7 +65,7 @@ const FeatureTabOne = () => {
                     </Col>
                     <Col lg={5}>
                       <div className="chose_img">
-                        <img src={post.image} alt={`chose_img-${index}`} />
+                        <img src={urlFor(post.image)} alt={`chose_img-${index}`} />
                       </div>
                     </Col>
                   </Row>

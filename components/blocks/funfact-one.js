@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { FunfactData } from "@/data";
 
-const FunfactOne = ({ data = FunfactData }) => {
+const FunfactOne = ({ data: { funfacts = FunfactData } = {} }) => {
   const [counter, setCounter] = useState({
     startCounter: false
   });
@@ -17,7 +17,7 @@ const FunfactOne = ({ data = FunfactData }) => {
     <section className="commonSection funfact">
       <Container>
         <Row>
-          {data.map(({ title, countNumber }, index) => (
+          {funfacts.map(({ title, countNumber }, index) => (
             <Col lg={3} md={6} sm={12} key={index}>
               <div className="singlefunfact text-center">
                 <h1 className="timer">

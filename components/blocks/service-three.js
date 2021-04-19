@@ -3,8 +3,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ServicePostThreeData } from "@/data";
 import ServiceCardThree from "@/components/service-card-three";
 
-const ServiceThree = ({ data }) => {
-  const { sectionContent, posts } = ServicePostThreeData;
+const ServiceThree = ({ data = ServicePostThreeData }) => {
+  const { sectionContent, posts } = data;
   const { title, subTitle, text } = sectionContent;
   return (
     <section className="commonSection what_wedo_2">

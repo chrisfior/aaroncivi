@@ -4,9 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, EffectFade } from "swiper";
 import { Col, Container, Row } from "react-bootstrap";
 import { SliderThreeData } from "@/data";
+import { urlFor } from "@/utils/sanity";
 SwiperCore.use([Autoplay, Navigation, EffectFade]);
 
-const SliderThree = () => {
+const SliderThree = ({ data = {} }) => {
+
+  const { slides = SliderThreeData } = data;
   const mainSlideOptions = {
     slidesPerView: 1,
     loop: true,
@@ -22,11 +25,11 @@ const SliderThree = () => {
   return (
     <section className="main-slider">
       <Swiper {...mainSlideOptions}>
-        {SliderThreeData.map(({ image, subTitle, title, button }, index) => (
+        {slides.map(({ image, subTitle, title, button }, index) => (
           <SwiperSlide key={index}>
             <div
               className="image-layer"
-              style={{ backgroundImage: `url(${image})` }}
+              style={{ backgroundImage: `url(${urlFor(image)})` }}
             ></div>
             <Container>
               <Row>

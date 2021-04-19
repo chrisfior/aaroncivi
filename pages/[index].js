@@ -12,6 +12,16 @@ import Footer from "@/components/footer";
 const query = `*[_type == "page" && url.current == $url][0]{
   ...,
   navigation[]->,
+  content[] {
+    ...,
+    posts[]->,
+    blogs[]->,
+    portfolioPosts[]->{
+      ...,
+      categories[]->,
+    },
+    users[]->,
+  },
   "url": url.current
 }`;
 

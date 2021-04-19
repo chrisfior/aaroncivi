@@ -21,7 +21,12 @@ export default {
     {
       name: "url",
       title: "url",
-      type: "slug",
+      type: "string",
+    },
+    {
+      name: "extraClassName",
+      title: "Extra class mame",
+      type: "string",
     },
   ],
 }

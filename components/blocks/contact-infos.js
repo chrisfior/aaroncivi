@@ -1,8 +1,9 @@
 import React from "react";
 import { ContactInfosBlock, ContactInfosList } from "@/data";
 
-const ContactInfos = () => {
-  const { subTitle, title, description } = ContactInfosBlock;
+const ContactInfos = ({ data = {} }) => {
+  const { sectionContent = ContactInfosBlock, items = ContactInfosList } = data
+  const { subTitle, title, text } = sectionContent;
   return (
     <section className="commonSection client_2">
       <div className="container">
@@ -10,11 +11,11 @@ const ContactInfos = () => {
           <div className="col-lg-12 text-center">
             <h4 className="sub_title">{subTitle}</h4>
             <h2 className="sec_title">{title}</h2>
-            <p className="sec_desc">{description}</p>
+            <p className="sec_desc">{text}</p>
           </div>
         </div>
         <div className="row">
-          {ContactInfosList.map(({ title, infos }, index) => (
+          {items.map(({ title, infos }, index) => (
             <div
               className="col-lg-3 col-sm-6 col-md-3"
               key={`contact-infos-${index}`}

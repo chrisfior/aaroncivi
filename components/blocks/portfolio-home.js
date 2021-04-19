@@ -5,7 +5,7 @@ import PortfolioCard from "@/components/portfolio-card";
 import { PortfolioHomeData, PortfolioData } from "@/data";
 
 const PortfolioHome = ({ data = {} }) => {
-  const { sectionContent = {}, portfolioPosts = PortfolioData } = data;
+  const { sectionContent, portfolioPosts = PortfolioData } = data;
   return (
     <section className="commonSection porfolio">
       <Container>
